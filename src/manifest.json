@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "name": "Paginator",
     "description": "Create paginated pdf documents in joplin.",
-    "author": "KosRud",
+    "author": "Kostiantyn Rudenko",
     "homepage_url": "https://github.com/KosRud/joplin-plugin-paginator",
     "repository_url": "https://github.com/KosRud/joplin-plugin-paginator",
     "keywords": [],
