@@ -1,12 +1,12 @@
-import joplin from 'api';
+import joplin from "api";
 import { ContentScriptType } from "api/types";
 
 joplin.plugins.register({
-	onStart: async function() {
-		await joplin.contentScripts.register(
-			ContentScriptType.MarkdownItPlugin,
-			'htmlLang',
-			'./htmlLangPlugin.js'
-		);
-	},
+    onStart: async function () {
+        await joplin.contentScripts.register(
+            ContentScriptType.MarkdownItPlugin,
+            "paginator",
+            "./paginatorPlugin.js"
+        );
+    },
 });

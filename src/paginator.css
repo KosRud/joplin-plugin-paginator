@@ -38,8 +38,10 @@
 }
 
 .pdf-paginator {
+    --column-gap: 25pt;
+
     box-sizing: border-box;
-    column-gap: 25pt;
+    column-gap: var(--column-gap);
     column-count: 2;
     column-fill: auto;
     width: 21cm;
@@ -51,6 +53,7 @@
     widows: 3;
     orphans: 3;
     hyphens: auto;
+    position: relative;
 }
 
 .pdf-paginator > *:first-child {
@@ -69,6 +72,7 @@
     left: 0;
     width: 100%;
     text-align: center;
+    font-size: 1.4rem;
 }
 
 /*------------------------------------------------
@@ -105,4 +109,97 @@
 
 .pdf-paginator .column-break + * {
     margin-top: 0px;
+}
+
+/*------------------------------------------------
+	PDF TOC
+------------------------------------------------*/
+
+.pdf-paginator .table-of-contents {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    --size-1: 1.2rem;
+    --size-2: 1rem;
+    --size-dots: var(--size-2);
+    --line-height: 1.2;
+    column-span: all;
+}
+
+.pdf-paginator .table-of-contents li,
+.pdf-paginator .table-of-contents ul {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+}
+
+.pdf-paginator .table-of-contents > ul {
+    height: 100%;
+    width: 100%;
+    line-height: var(--line-height);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    column-gap: var(--column-gap);
+    font-size: var(--size-1);
+}
+
+.pdf-paginator .table-of-contents > ul > li {
+    break-inside: avoid;
+    width: calc(50% - var(--column-gap) / 2);
+}
+
+.pdf-paginator .table-of-contents > ul > li > ul {
+    font-size: var(--size-2);
+}
+
+.toc-page-number {
+    font-size: var(--size-2);
+}
+
+.pdf-paginator .table-of-contents > ul > li > ul > li > ul {
+    display: none;
+}
+
+.pdf-paginator .table-of-contents li {
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.pdf-paginator .table-of-contents > ul ul {
+    grid-column: span 2;
+}
+
+.pdf-paginator .table-of-contents a {
+    overflow: hidden;
+    position: relative;
+}
+
+.pdf-paginator .table-of-contents > ul > li > a::after {
+    content: ".\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.";
+    word-break: break-all;
+    overflow-wrap: break-word;
+    position: absolute;
+    font-size: var(--size-dots);
+    line-height: calc(var(--size-1) * var(--line-height));
+}
+
+.pdf-paginator .table-of-contents > ul > li > ul > li a::after {
+    content: ".\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.";
+    word-break: break-all;
+    overflow-wrap: break-word;
+    position: absolute;
+    font-size: var(--size-dots);
+}
+
+#rendered-md .pdf-paginator .table-of-contents .toc-page-number {
+    padding: 0px;
+    margin: 0px;
+    font-size: var(--size-dots);
+}
+
+#rendered-md .pdf-paginator .table-of-contents > ul > li > .toc-page-number {
+    line-height: calc(var(--size-1) * var(--line-height));
 }

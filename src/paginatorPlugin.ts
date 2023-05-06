@@ -142,7 +142,7 @@ export default function (context) {
             };
         },
         assets: function () {
-            return [{ name: "htmlLang.js" }, { name: "paginator.css" }];
+            return [{ name: "paginator.js" }, { name: "paginator.css" }];
         },
     };
 }
