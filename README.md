@@ -8,7 +8,7 @@ This plugin allows to create paginated documents in joplin.
 
 # Usage
 
-The paginator works with content between `\pdf` and `\endpdf`. Use `\column` and `\page` for column break and page break, respectively. Paragraphs automatically flow from one column to another, but page breaks can only be inserted manually. Page numbers are inserted automatically and displayed in TOC.
+The paginator works with content between `\pdf` and `\endpdf`. Use `\column` and `\page` for column break and page break, respectively. Paragraphs automatically flow from one column to another, but page breaks can only be inserted manually. Page numbers are inserted automatically and displayed in TOC. Automatic hyphenation enabled using [hyphen](https://www.npmjs.com/package/hyphen).
 
 To get a pdf, I export the note to an html file, open it in a browser, and then print to pdf. I did not try exporting to pdf directly: it might or might not work.
 
@@ -34,6 +34,4 @@ Text on the second page
 
 # Limitations
 
-### Hyphenation
-
-Automatic hyphenation does not work in joplin, but it works when exporting to an html file and opening it with a web browser (tested in vivaldi). For hyphenation to work, attribute `lang` must be set in the `html` element. Currently the plugin sets `lang="en"` with no option to use a different language. **ToDo**: add config option to choose `lang` value.
+Hyphenation assumes English language. **ToDo**: config option to select hyphenation language.

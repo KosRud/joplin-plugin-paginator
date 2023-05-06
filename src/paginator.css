@@ -50,9 +50,9 @@
     overflow: hidden;
     background: white;
     text-align: justify;
-    widows: 3;
-    orphans: 3;
-    hyphens: auto;
+    widows: 4;
+    orphans: 4;
+    hyphens: manual; /* use manual hyphens from the hyphen npm package */
     position: relative;
 }
 

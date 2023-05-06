@@ -1,6 +1,21 @@
+import { hyphenateSync } from "hyphen/en";
+
 export default function (context) {
     return {
         plugin: function (markdownIt, _options) {
+            const defaultTextRenderer = markdownIt.renderer.rules.text;
+
+            markdownIt.renderer.rules.text = markdownIt.renderer.rules.pdf = (
+                tokens,
+                idx,
+                options,
+                env,
+                self
+            ) => {
+                tokens[idx].content = hyphenateSync(tokens[idx].content);
+                return defaultTextRenderer(tokens, idx, options, env, self);
+            };
+
             markdownIt.block.ruler.before(
                 "paragraph",
                 "pdf_block",
