@@ -4,8 +4,7 @@ This plugin allows to create paginated documents in joplin.
 
 ![image](https://user-images.githubusercontent.com/36504423/236614509-e878452f-fcd4-4eba-822c-02a80135c887.png)
 
-![image](https://user-images.githubusercontent.com/36504423/236638021-5858bf8a-c275-42de-8789-377df6629106.png)
-
+![image](https://user-images.githubusercontent.com/36504423/236638236-8c030d0b-5d55-4a28-bfad-ace5bd3e68e5.png)
 
 # Usage
 
