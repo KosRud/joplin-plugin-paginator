@@ -4,6 +4,9 @@ This plugin allows to create paginated documents in joplin.
 
 ![image](https://user-images.githubusercontent.com/36504423/236614509-e878452f-fcd4-4eba-822c-02a80135c887.png)
 
+![image](https://user-images.githubusercontent.com/36504423/236638021-5858bf8a-c275-42de-8789-377df6629106.png)
+
+
 # Usage
 
 The paginator works with content between `\pdf` and `\endpdf`. Use `\column` and `\page` for column break and page break, respectively. Paragraphs automatically flow from one column to another, but page breaks can only be inserted manually. Page numbers are inserted automatically.
