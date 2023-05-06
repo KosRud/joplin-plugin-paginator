@@ -1,8 +1,4 @@
 *.md
 !README.md
 /*.jpl
-/api
-/src
 /dist
-tsconfig.json
-webpack.config.js
