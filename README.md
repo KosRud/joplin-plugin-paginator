@@ -1,24 +1,35 @@
-# Joplin Plugin
+# Paginator
 
-This is a template to create a new Joplin plugin.
+This plugin allows to create paginated documents in joplin.
 
-The main two files you will want to look at are:
+![image](https://user-images.githubusercontent.com/36504423/236614509-e878452f-fcd4-4eba-822c-02a80135c887.png)
 
-- `/src/index.ts`, which contains the entry point for the plugin source code.
-- `/src/manifest.json`, which is the plugin manifest. It contains information such as the plugin a name, version, etc.
+# Usage
 
-## Building the plugin
+The paginator works with content between `\pdf` and `\endpdf`. Use `\column` and `\page` for column break and page break, respectively. Paragraphs automatically flow from one column to another, but page breaks can only be inserted manually. Page numbers are inserted automatically.
 
-The plugin is built using Webpack, which creates the compiled code in `/dist`. A JPL archive will also be created at the root, which can use to distribute the plugin.
+To get a pdf, I export the note to an html file, open it in a browser, and then print to pdf. I did not try exporting to pdf directly: it might or might not work.
 
-To build the plugin, simply run `npm run dist`.
+### Example
 
-The project is setup to use TypeScript, although you can change the configuration to use plain JavaScript.
+```md
+\pdf
 
-## Updating the plugin framework
+Some text
 
-To update the plugin framework, run `npm run update`.
+\column
 
-In general this command tries to do the right thing - in particular it's going to merge the changes in package.json and .gitignore instead of overwriting. It will also leave "/src" as well as README.md untouched.
+More text
 
-The file that may cause problem is "webpack.config.js" because it's going to be overwritten. For that reason, if you want to change it, consider creating a separate JavaScript file and include it in webpack.config.js. That way, when you update, you only have to restore the line that include your file.
+\page
+
+Text on the second page
+
+\endpdf
+```
+
+# Limitations
+
+### Hyphenation
+
+Automatic hyphenation does not work in joplin, but it works when exporting to an html file and opening it with a web browser (tested in vivaldi). For hyphenation to work, attribute `lang` must be set in the `html` element. Currently the plugin sets `lang="en"` with no option to use a different language. **ToDo**: add config option to choose `lang` value.
