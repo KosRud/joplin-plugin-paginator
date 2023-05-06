@@ -9,9 +9,11 @@ This plugin allows to create paginated documents in joplin.
 
 # Usage
 
-The paginator works with content between `\pdf` and `\endpdf`. Use `\column` and `\page` for column break and page break, respectively. Paragraphs automatically flow from one column to another, but page breaks can only be inserted manually. Page numbers are inserted automatically.
+The paginator works with content between `\pdf` and `\endpdf`. Use `\column` and `\page` for column break and page break, respectively. Paragraphs automatically flow from one column to another, but page breaks can only be inserted manually. Page numbers are inserted automatically and displayed in TOC.
 
 To get a pdf, I export the note to an html file, open it in a browser, and then print to pdf. I did not try exporting to pdf directly: it might or might not work.
+
+**Always** put `\page` after `[TOC]`. Having content on the same page as TOC is not supported.
 
 ### Example
 
