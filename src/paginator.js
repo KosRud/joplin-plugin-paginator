@@ -38,6 +38,14 @@ function onUpdate() {
                 a.outerHTML
             }<div class="toc-page-number">${getPageNum(a.href)}</div>`;
         });
+
+    if (document.querySelector(".pdf-paginator")) {
+        const noteTitle = document.querySelector(".exported-note-title");
+        if (!noteTitle) {
+            return;
+        }
+        noteTitle.style.display = "none";
+    }
 }
 
 document.addEventListener("joplin-noteDidUpdate", onUpdate);

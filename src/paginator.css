@@ -25,37 +25,6 @@
 	PDF
 ------------------------------------------------*/
 
-.exported-note,
-.exported-note #rendered-md,
-.pdf-paginator-container,
-.pdf-paginator {
-    margin: 0px;
-    padding: 0px;
-}
-
-.exported-note {
-    padding: 0px;
-}
-
-.pdf-paginator {
-    --column-gap: 25pt;
-
-    box-sizing: border-box;
-    column-gap: var(--column-gap);
-    column-count: 2;
-    column-fill: auto;
-    width: 21cm;
-    height: 29.7cm;
-    padding: 2.5cm;
-    overflow: hidden;
-    background: white;
-    text-align: justify;
-    widows: 4;
-    orphans: 4;
-    hyphens: manual; /* use manual hyphens from the hyphen npm package */
-    position: relative;
-}
-
 .pdf-paginator > *:first-child {
     margin-top: 0px;
 }
@@ -73,6 +42,35 @@
     width: 100%;
     text-align: center;
     font-size: 1.4rem;
+}
+
+.exported-note,
+.exported-note #rendered-md,
+.pdf-paginator-container,
+.pdf-paginator {
+    margin: 0px !important;
+    padding: 0px !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.pdf-paginator {
+    --column-gap: 25pt;
+
+    box-sizing: border-box;
+    column-gap: var(--column-gap);
+    column-count: 2;
+    column-fill: auto;
+    width: 21cm;
+    height: 29.7cm;
+    padding: 2.5cm !important;
+    overflow: hidden;
+    background: white;
+    text-align: justify;
+    widows: 4;
+    orphans: 4;
+    hyphens: manual; /* use manual hyphens from the hyphen npm package */
+    position: relative;
 }
 
 /*------------------------------------------------
@@ -155,7 +153,7 @@
     font-size: var(--size-2);
 }
 
-.toc-page-number {
+.pdf-paginator .toc-page-number {
     font-size: var(--size-2);
 }
 
