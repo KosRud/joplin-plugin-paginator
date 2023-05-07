@@ -2,7 +2,7 @@
 	Preview in Joplin app
 ------------------------------------------------*/
 
-#joplin-container-content .pdf-paginator-container {
+#joplin-container-content .paginator-container {
     --padding: 10px;
     --background: #e9e9e9;
     box-shadow: 0px 0px 0px var(--padding) var(--background);
@@ -10,11 +10,11 @@
     padding-bottom: calc(var(--padding) * 2);
 }
 
-#joplin-container-content .pdf-paginator-container:first-child {
+#joplin-container-content .paginator-container:first-child {
     margin-top: var(--padding);
 }
 
-#joplin-container-content .pdf-paginator {
+#joplin-container-content .paginator {
     border: 1px solid #0003;
     box-shadow: 2px 2px 4px #000a;
     margin-left: auto;
@@ -25,16 +25,16 @@
 	PDF
 ------------------------------------------------*/
 
-.pdf-paginator > *:first-child {
+.paginator > *:first-child {
     margin-top: 0px;
 }
 
-.pdf-paginator-container {
+.paginator-container {
     counter-increment: page-counter;
     position: relative;
 }
 
-.pdf-paginator::after {
+.paginator::after {
     content: counter(page-counter);
     position: absolute;
     bottom: 1.5cm;
@@ -44,17 +44,15 @@
     font-size: 1.4rem;
 }
 
-.exported-note,
-.exported-note #rendered-md,
-.pdf-paginator-container,
-.pdf-paginator {
-    margin: 0px !important;
-    padding: 0px !important;
-    border: none !important;
-    box-shadow: none !important;
+.paginator-container,
+.paginator {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    box-shadow: none;
 }
 
-.pdf-paginator {
+.paginator {
     --column-gap: 25pt;
 
     box-sizing: border-box;
@@ -63,7 +61,7 @@
     column-fill: auto;
     width: 21cm;
     height: 29.7cm;
-    padding: 2.5cm !important;
+    padding: 2.5cm;
     overflow: hidden;
     background: white;
     text-align: justify;
@@ -74,14 +72,14 @@
 }
 
 /*------------------------------------------------
-	Wide Heading
+	H1 (column-span: 1)
 ------------------------------------------------*/
 
-.pdf-paginator h1 {
+.paginator h1 {
     column-span: all;
 }
 
-.pdf-paginator h1 + * {
+.paginator h1 + * {
     margin-top: 0px;
 }
 
@@ -97,23 +95,23 @@
 }
 
 /*------------------------------------------------
-	PDF .column-break
+	ColumnBreak
 ------------------------------------------------*/
 
-.column-break {
+.paginator-columnBreak {
     visibility: hidden;
     break-after: column;
 }
 
-.pdf-paginator .column-break + * {
+.paginator-columnBreak + * {
     margin-top: 0px;
 }
 
 /*------------------------------------------------
-	PDF TOC
+	TOC
 ------------------------------------------------*/
 
-.pdf-paginator .table-of-contents {
+.paginator .table-of-contents {
     height: 100%;
     width: 100%;
     margin: 0px;
@@ -126,14 +124,14 @@
     column-span: all;
 }
 
-.pdf-paginator .table-of-contents li,
-.pdf-paginator .table-of-contents ul {
+.paginator .table-of-contents li,
+.paginator .table-of-contents ul {
     margin-top: 0px;
     margin-bottom: 0px;
     padding: 0px;
 }
 
-.pdf-paginator .table-of-contents > ul {
+.paginator .table-of-contents > ul {
     height: 100%;
     width: 100%;
     line-height: var(--line-height);
@@ -144,38 +142,38 @@
     font-size: var(--size-1);
 }
 
-.pdf-paginator .table-of-contents > ul > li {
+.paginator .table-of-contents > ul > li {
     break-inside: avoid;
     width: calc(50% - var(--column-gap) / 2);
 }
 
-.pdf-paginator .table-of-contents > ul > li > ul {
+.paginator .table-of-contents > ul > li > ul {
     font-size: var(--size-2);
 }
 
-.pdf-paginator .toc-page-number {
+.paginator .toc-page-number {
     font-size: var(--size-2);
 }
 
-.pdf-paginator .table-of-contents > ul > li > ul > li > ul {
+.paginator .table-of-contents > ul > li > ul > li > ul {
     display: none;
 }
 
-.pdf-paginator .table-of-contents li {
+.paginator .table-of-contents li {
     display: grid;
     grid-template-columns: 1fr auto;
 }
 
-.pdf-paginator .table-of-contents > ul ul {
+.paginator .table-of-contents > ul ul {
     grid-column: span 2;
 }
 
-.pdf-paginator .table-of-contents a {
+.paginator .table-of-contents a {
     overflow: hidden;
     position: relative;
 }
 
-.pdf-paginator .table-of-contents > ul > li > a::after {
+.paginator .table-of-contents > ul > li > a::after {
     content: ".\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.";
     word-break: break-all;
     overflow-wrap: break-word;
@@ -184,7 +182,7 @@
     line-height: calc(var(--size-1) * var(--line-height));
 }
 
-.pdf-paginator .table-of-contents > ul > li > ul > li a::after {
+.paginator .table-of-contents > ul > li > ul > li a::after {
     content: ".\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.\00AD.";
     word-break: break-all;
     overflow-wrap: break-word;
@@ -192,12 +190,12 @@
     font-size: var(--size-dots);
 }
 
-#rendered-md .pdf-paginator .table-of-contents .toc-page-number {
+.paginator .toc-page-number {
     padding: 0px;
     margin: 0px;
     font-size: var(--size-dots);
 }
 
-#rendered-md .pdf-paginator .table-of-contents > ul > li > .toc-page-number {
+.paginator .table-of-contents > ul > li > .toc-page-number {
     line-height: calc(var(--size-1) * var(--line-height));
 }

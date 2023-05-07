@@ -89,7 +89,7 @@ export default function (context) {
                                 );
                                 token.block = true;
                                 token.content =
-                                    '<div class="column-break"></div>';
+                                    '<div class="paginator-columnBreak"></div>';
                                 token.map = [startLine, startLine + 1];
                                 token.markup = "\\column";
 
@@ -103,7 +103,7 @@ export default function (context) {
                                 const token = state.push("pageBreak", "div", 0);
                                 token.block = true;
                                 token.content =
-                                    '</div></div><div class="pdf-paginator-container"><div class="pdf-paginator">';
+                                    '</div></div><div class="paginator-container"><div class="paginator">';
                                 token.map = [startLine, startLine + 1];
                                 token.markup = "\\page";
 
@@ -153,7 +153,7 @@ export default function (context) {
                     : "";
 
                 // Wrap the rendered content in a <div> with a class
-                return `<div class="pdf-paginator-container"><div class="pdf-paginator">${content}</div></div>`;
+                return `<div class="paginator-container"><div class="paginator">${content}</div></div>`;
             };
         },
         assets: function () {
