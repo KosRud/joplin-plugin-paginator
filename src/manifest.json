@@ -2,7 +2,7 @@
     "manifest_version": 1,
     "id": "com.MadCake.joplin.markdown-table-sortable",
     "app_min_version": "2.8",
-    "version": "2.0.2",
+    "version": "3.0.0",
     "name": "Paginator",
     "description": "Create paginated 2-column documents in joplin.",
     "author": "Kostiantyn Rudenko",
