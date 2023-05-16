@@ -1,4 +1,17 @@
 /*------------------------------------------------
+	Hyphens
+------------------------------------------------*/
+
+body {
+    /*
+		By default the notes are not automatically hyphenated. The plugin inserts manual hyphenation for paginated notes, but for normal notes we disable it to preserve default behavior.
+
+		As a side-effect, you can't insert manual hyphenation in normal notes. But without a fixed page width, why would you?
+	*/
+    hyphens: none;
+}
+
+/*------------------------------------------------
 	Preview in Joplin app
 ------------------------------------------------*/
 
